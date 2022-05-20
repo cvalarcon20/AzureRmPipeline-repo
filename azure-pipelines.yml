@@ -1,0 +1,13 @@
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'SP-conexion-AzurePractiaMLOPS'
+    subscriptionId: 'a879a46d-f994-4335-90e8-728b0ecda95d'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'AzureRmPipeline-rg'
+    location: 'Brazil South'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/cvalarcon20/AzureRmPipeline-repo/main/CreateWebApp/azuredeploy.json'
+    overrideParameters: '-projectName [MLOPS]'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
